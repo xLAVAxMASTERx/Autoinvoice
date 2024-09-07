@@ -246,7 +246,7 @@ def _build_msal_app(cache=None, authority=None):
     return msal.ConfidentialClientApplication(
         CLIENT_ID,
         authority=authority or AUTHORITY,
-        client_credential=CLIENT_SECRET,
+        #client_credential=CLIENT_SECRET,
         token_cache=cache)
 
 def _load_cache():
