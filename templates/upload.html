@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            text-align: right;
+        }
+
+        .user-info p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .user-info .user-details {
+            margin-bottom: 10px;
+        }
+
+        .user-info p + p {
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logout-button {
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .logout-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Upload Image</h1>
+            <div class="user-info">
+                <div class="user-details">
+                    <p>{{ session['user']['name'] }}</p>
+                    <p>{{ session['user']['preferred_username'] }}</p>
+                </div>
+                <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+            </div>
+        </div>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" id="fileInput">
+            <input type="submit" value="Upload">
+        </form>
+        
+        <h2>Your Upload History</h2>
+        {% if uploads %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Upload Time</th>
+                        <th>Image File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for upload in uploads %}
+                        <tr>
+                            <td>{{ upload.upload_time }}</td>
+                            <td><a href="{{ url_for('uploaded_file', filename=upload.image_file) }}">{{ upload.image_file }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No uploads found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

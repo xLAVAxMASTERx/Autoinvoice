@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select ROI</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #imageContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #roi {
+            position: absolute;
+            border: 2px dashed red;
+            cursor: move;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select ROI</h1>
+    <div id="imageContainer">
+        <img id="image" src="/uploads/{{ filename }}" alt="Image" onload="initializeROISelector()">
+        <div id="roi"></div>
+    </div>
+    <button onclick="saveROI()">Save ROI</button>
+
+    <script>
+        function initializeROISelector() {
+            let roi = document.getElementById('roi');
+            let image = document.getElementById('image');
+            let container = document.getElementById('imageContainer');
+
+            let startX, startY;
+
+            container.addEventListener('mousedown', function(event) {
+                startX = event.offsetX;
+                startY = event.offsetY;
+                roi.style.left = startX + 'px';
+                roi.style.top = startY + 'px';
+                roi.style.width = '0px';
+                roi.style.height = '0px';
+                container.addEventListener('mousemove', onMouseMove);
+            });
+
+            container.addEventListener('mouseup', function() {
+                container.removeEventListener('mousemove', onMouseMove);
+            });
+
+            function onMouseMove(event) {
+                let currentX = event.offsetX;
+                let currentY = event.offsetY;
+                let width = currentX - startX;
+                let height = currentY - startY;
+                roi.style.width = width + 'px';
+                roi.style.height = height + 'px';
+            }
+        }
+
+        function saveROI() {
+            let roi = document.getElementById('roi');
+            let container = document.getElementById('imageContainer');
+            let rect = roi.getBoundingClientRect();
+            let containerRect = container.getBoundingClientRect();
+
+            let x = rect.left - containerRect.left;
+            let y = rect.top - containerRect.top;
+            let width = rect.width;
+            let height = rect.height;
+
+            fetch('/crop', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    filename: "{{ filename }}",
+                    x: x,
+                    y: y,
+                    width: width,
+                    height: height
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                window.location.href = '/dashboard';
+            });
+        }
+    </script>
+</body>
+</html>

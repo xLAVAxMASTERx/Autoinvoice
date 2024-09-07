@@ -1,0 +1,100 @@
+--------Recognizing invoice #1--------
+Invoice items:
+...Item #1
+......Description: Veg Extravaganza has confidence: 0.921
+......Quantity: 8.0 has confidence: 0.956
+......Amount: ₹4200.0 has confidence: 0.921
+...Item #2
+......Description: Peppy Paneer has confidence: 0.937
+......Quantity: 8.0 has confidence: 0.951
+......Amount: ₹4552.0 has confidence: 0.924
+...Item #3
+......Description: Veggie Paradise has confidence: 0.933
+......Quantity: 8.0 has confidence: 0.957
+......Amount: ₹4552.0 has confidence: 0.921
+...Item #4
+......Description: Mexican Green Wave has confidence: 0.913
+......Quantity: 8.0 has confidence: 0.948
+......Amount: ₹4552.0 has confidence: 0.923
+...Item #5
+......Description: Non Veg Supreme has confidence: 0.668
+......Quantity: 2.0 has confidence: 0.947
+......Amount: ₹1488.0 has confidence: 0.91
+...Item #6
+......Description: Chicken Dominator has confidence: 0.943
+......Quantity: 2.0 has confidence: 0.947
+......Amount: ₹1488.0 has confidence: 0.921
+...Item #7
+......Description: Chicken Fiesta has confidence: 0.937
+......Quantity: 2.0 has confidence: 0.947
+......Amount: ₹1248.0 has confidence: 0.922
+...Item #8
+......Description: Chicken Golden Delight has confidence: 0.915
+......Quantity: 2.0 has confidence: 0.947
+......Amount: ₹1050.0 has confidence: 0.931
+...Item #9
+......Description: Roasted Chicken Wings - Classic Hot
+Sauce has confidence: 0.937
+......Quantity: 4.0 has confidence: 0.953
+......Amount: ₹476.0 has confidence: 0.928
+...Item #10
+......Description: Boneless Chicken Wings Peri-Peri has confidence: 0.922
+......Quantity: 4.0 has confidence: 0.947
+......Amount: ₹596.0 has confidence: 0.922
+...Item #11
+......Description: Chicken Parcel has confidence: 0.938
+......Quantity: 6.0 has confidence: 0.948
+......Amount: ₹270.0 has confidence: 0.922
+...Item #12
+......Description: Stuffed Garlic Breadsticks has confidence: 0.919
+......Quantity: 20.0 has confidence: 0.949
+......Amount: ₹2900.0 has confidence: 0.923
+...Item #13
+......Description: White Pasta Italiano Veg has confidence: 0.922
+......Quantity: 6.0 has confidence: 0.947
+......Amount: ₹810.0 has confidence: 0.921
+...Item #14
+......Description: Veg Parcel has confidence: 0.938
+......Quantity: 10.0 has confidence: 0.947
+......Amount: ₹390.0 has confidence: 0.923
+...Item #15
+......Description: Crinkle Fries has confidence: 0.938
+......Quantity: 10.0 has confidence: 0.95
+......Amount: ₹590.0 has confidence: 0.922
+...Item #16
+......Description: Crunchy Strips has confidence: 0.938
+......Quantity: 10.0 has confidence: 0.947
+......Amount: ₹590.0 has confidence: 0.931
+...Item #17
+......Description: Cheesy Jalapeno Dip has confidence: 0.916
+......Quantity: 15.0 has confidence: 0.949
+......Amount: ₹375.0 has confidence: 0.727
+...Item #18
+......Description: Cheesy Dip has confidence: 0.938
+......Quantity: 15.0 has confidence: 0.948
+......Amount: ₹375.0 has confidence: 0.911
+...Item #19
+......Description: Butterscotch Mousse Cake has confidence: 0.918
+......Quantity: 10.0 has confidence: 0.947
+......Amount: ₹990.0 has confidence: 0.914
+...Item #20
+......Description: Tomato Ketchup has confidence: 0.939
+......Quantity: 100.0 has confidence: 0.948
+......Amount: ₹100.0 has confidence: 0.909
+...Item #21
+......Description: Brownie Fantasy has confidence: 0.937
+......Quantity: 5.0 has confidence: 0.948
+......Amount: ₹295.0 has confidence: 0.91
+...Item #22
+......Description: Choco Lava Cake has confidence: 0.914
+......Quantity: 50.0 has confidence: 0.948
+......Amount: ₹4950.0 has confidence: 0.907
+...Item #23
+......Description: Pepsi has confidence: 0.947
+......Quantity: 20.0 has confidence: 0.947
+......Amount: ₹1200.0 has confidence: 0.92
+...Item #24
+......Description: 7 Up has confidence: 0.937
+......Quantity: 10.0 has confidence: 0.947
+......Amount: ₹600.0 has confidence: 0.927
+----------------------------------------
