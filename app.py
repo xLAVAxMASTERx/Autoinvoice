@@ -25,7 +25,7 @@ os.environ['CLIENT_SECRET'] = ''
 # Azure AD Config
 CLIENT_ID = ''
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
-AUTHORITY = 'https://login.microsoftonline.com/dab1aea2-4379-4b34-bcd8-f3ba54cc13ac'
+AUTHORITY = ''
 REDIRECT_PATH = '/getAToken'
 SCOPE = ["User.Read"]
 SESSION_TYPE = 'filesystem'
