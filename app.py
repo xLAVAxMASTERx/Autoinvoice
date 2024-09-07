@@ -20,10 +20,10 @@ app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
 # Set the client secret in the environment variables before running the app
-os.environ['CLIENT_SECRET'] = 'O478Q~pg9AIqfca7EJAfBSTTEs0l9icaa3HcGcXo'
+os.environ['CLIENT_SECRET'] = ''
 
 # Azure AD Config
-CLIENT_ID = '62ba5f61-b99e-4407-993e-2daf76ea0d1d'
+CLIENT_ID = ''
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 AUTHORITY = 'https://login.microsoftonline.com/dab1aea2-4379-4b34-bcd8-f3ba54cc13ac'
 REDIRECT_PATH = '/getAToken'
@@ -32,10 +32,10 @@ SESSION_TYPE = 'filesystem'
 logging.basicConfig(level=logging.DEBUG)
 
 # MySQL Config
-DB_HOST = 'localhost'
-DB_USER = 'root'
-DB_PASSWORD = 'bobo'
-DB_NAME = 'user_auth'
+DB_HOST = ''
+DB_USER = ''
+DB_PASSWORD = ''
+DB_NAME = ''
 
 def get_db_connection():
     connection = mysql.connector.connect(
