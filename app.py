@@ -13,7 +13,7 @@ from PIL import Image
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Change to your actual secret key
+#app.secret_key = 'your_secret_key'  # Change to your actual secret key
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SESSION_TYPE'] = 'filesystem'
@@ -24,7 +24,8 @@ Session(app)
 
 # Azure AD Config
 CLIENT_ID = ''
-CLIENT_SECRET = os.getenv('CLIENT_SECRET')
+
+#CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 AUTHORITY = ''
 REDIRECT_PATH = '/getAToken'
 SCOPE = ["User.Read"]
