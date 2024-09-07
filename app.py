@@ -20,7 +20,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
 # Set the client secret in the environment variables before running the app
-os.environ['CLIENT_SECRET'] = ''
+#os.environ['CLIENT_SECRET'] = ''
 
 # Azure AD Config
 CLIENT_ID = ''
